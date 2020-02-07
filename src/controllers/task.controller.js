@@ -18,7 +18,11 @@ export async function getTasks(req, res){
 
 export async function getTasksByProject(req, res){
     try{
-        const tasks = await Task.findAll();
+        const { projectid } = req.params;
+        const tasks = await Task.findAll({
+            attributes: ['id', 'name', 'done', 'projectid'],
+            where: { projectid }
+        });
         res.json({
             data: tasks
         });
@@ -31,9 +35,8 @@ export async function getTask(req, res){
     try{
         const { id } = req.params;
         const task = await Task.findOne({
-            where: {
-                id
-            }
+            attributes: ['id', 'name', 'done', 'projectid'],
+            where: { id }
         });
         res.json({
             data: task
@@ -74,26 +77,23 @@ export async function editTask(req, res){
         const { id } = req.params;
         const { name, done, projectid } = req.body;
 
-        const tasks = await Task.findAll({
+        const task = await Task.findOne({
             attributes: ['id', 'name', 'done', 'projectid'],
-            where: {
-                id
-            }
+            where: { id }
         });
 
-        if(tasks.length > 0){
-            tasks.forEach(async task => {
-                await task.update({
-                    name,
-                    done,
-                    projectid
-                });
-            })
-        }
-        
+        const updatedTask = await Task.update({
+            name,
+            done,
+            projectid
+        },
+        {
+            where: { id }
+        });
+
         return res.json({
             message: 'Task updated successfully',
-            data: tasks
+            data: updatedTask
         });
     } catch(e){
         console.log(e);
