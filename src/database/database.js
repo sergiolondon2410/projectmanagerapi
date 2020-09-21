@@ -1,9 +1,9 @@
 import Sequelize from 'sequelize';
 
 export const sequelize = new Sequelize(
-    'nodeapi',
-    'postgres',
-    'r3c0rd',
+    'azytana_qqrcomer',
+    'user1',
+    'password1',
     {
         host: 'localhost',
         dialect: 'postgres',
