@@ -1,0 +1,19 @@
+{
+    "development": {
+      "username": "user1",
+      "password": "password1",
+      "database": "azytana_qqrcomer",
+      "host": "localhost",
+      "dialect": "postgres",
+      "operatorsAliases": false
+    },
+    "production": {
+      "username": "nxtbunyubzbtru",
+      "password": "c8e815461027776ded319266a84d369ea883a3dd990c2ed73e777fa50053f619",
+      "database": "d8ocr9s9ndk0oe",
+      "host": "ec2-34-235-62-201.compute-1.amazonaws.com",
+      "dialect": "postgres",
+      "operatorsAliases": false,
+      "use_env_variable": "DATABASE_URL"
+    }
+  }

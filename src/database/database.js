@@ -1,28 +1,23 @@
 import Sequelize from 'sequelize';
 
 const env = process.env.NODE_ENV || 'development';
+const config = require(__dirname + '/../config/config.json')[env];
 
-console.log(env);
-if (env === 'development') {
-    var db_host = 'localhost';
-    var db_name = 'azytana_qqrcomer';
-    var db_user = 'user1';
-    var db_password = 'password1';
-} else {
-    var db_host = '';
-    var db_name = 'd';
-    var db_user = 'nx';
-    var db_password = '19';
-};
+// let sequelize;
 
+// if(config.use_env_variable){
+//     sequelize = new Sequelize(process.env[config.use_env_variable], config);
+// } else {
+//     sequelize = new Sequelize(config.database, config.username, config.password, config);
+// }
 
 export const sequelize = new Sequelize(
-    db_name,
-    db_user,
-    db_password,
+    config.database,
+    config.username,
+    config.password,
     {
-        host: db_host,
-        dialect: 'postgres',
+        host: config.host,
+        dialect: config.dialect,
         pool: {
             max: 5,
             min: 0,
@@ -32,3 +27,5 @@ export const sequelize = new Sequelize(
         logging: false
     }
 );
+
+// export default sequelize;

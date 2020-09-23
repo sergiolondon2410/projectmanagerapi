@@ -1,9 +1,10 @@
 import app from './app';
 import '@babel/polyfill';
+const port = process.env.PORT || 4000;
 
 async function main() {
-    await app.listen(4000);
-    console.log('Server on port 4000');
+    await app.listen(port);
+    console.log('Server on port ' + port);
 }
 
 main();
