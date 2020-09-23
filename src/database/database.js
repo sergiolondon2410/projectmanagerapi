@@ -9,10 +9,10 @@ if (env === 'development') {
     var db_user = 'user1';
     var db_password = 'password1';
 } else {
-    var db_host = 'ec2-34-235-62-201.compute-1.amazonaws.com';
-    var db_name = 'd8ocr9s9ndk0oe';
-    var db_user = 'nxtbunyubzbtru';
-    var db_password = 'c8e815461027776ded319266a84d369ea883a3dd990c2ed73e777fa50053f619';
+    var db_host = '';
+    var db_name = 'd';
+    var db_user = 'nx';
+    var db_password = '19';
 };
 
 
