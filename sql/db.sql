@@ -33,3 +33,6 @@ INSERT INTO tasks(name, done, projectid)
 
 INSERT INTO tasks(name, done, projectid)
     VALUES('Design UI', false, 2);
+
+INSERT INTO business(name, description, category, logo, email, address, qr_code, contact, web_page, cover_image, primary_color, second_color, note, image, createdAt, UpdatedAt)
+    VALUES('Mighty Meals', 'Restaurante de prueba', 'Comidas Rápidas', '/resources/mmi.jpg', 'mm@mail.com', 'calle falsa 123', '/resources/qr/qr1.jpg', 'Sergio Londono', 'http://mightymeals.com', '/resources/cover/001.jpg', '990033', 'DD6666', 'No abrimos los lunes', '/resources/mm01.jpg', '2020-09-16T02:05:06.000Z', '2020-09-16T02:05:06.000Z');

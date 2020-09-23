@@ -3,7 +3,7 @@ import { sequelize } from '../database/database';
 
 import Product from './Product';
 
-const Business = sequelize.define('Businesses', {
+const Business = sequelize.define('businesses', {
     id: {
         allowNull: false,
         autoIncrement: true,
